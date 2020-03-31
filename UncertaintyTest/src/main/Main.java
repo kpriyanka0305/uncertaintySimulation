@@ -1,6 +1,5 @@
 package main;
 
-import java.awt.image.DataBufferDouble;
 import java.text.DecimalFormat;
 import java.util.Random;
 
