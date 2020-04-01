@@ -1,5 +1,7 @@
 load "normal.plt"
 
+set title "position of bus changes over time\nbus speed v_b = (8.0,0.7)"
+
 set xrange [0:10]
 set xtics 0, 1
 
