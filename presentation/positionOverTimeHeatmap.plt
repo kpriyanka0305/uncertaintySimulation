@@ -1,12 +1,3 @@
-unset key
-
-#set terminal pdfcairo
-#set output "positionOverTime3D.pdf"
-
-set xlabel "time"
-set ylabel "distance"
-set zlabel "probability"
-
 set palette defined ( 0 '#eeeeee',\
                       1 '#000fff',\
                       2 '#0090ff',\
@@ -16,8 +7,6 @@ set palette defined ( 0 '#eeeeee',\
                       6 '#ff7000',\
                       7 '#ee0000',\
                       8 '#7f0000')
-
-set pm3d
-splot 'test.out' using 1:2:3 with lines linecolor palette
-
+set view map
+splot 'test.out' with pm3d
 pause -1

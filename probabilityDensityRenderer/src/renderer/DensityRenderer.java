@@ -28,7 +28,8 @@ public class DensityRenderer {
 
 	static public List<Double> parseLineND(String input) {
 		Scanner s = new Scanner(input);
-		List<Double> result = new ArrayList<Double>(2);
+		List<Double> result = new ArrayList<Double>(3);
+		result.add(s.nextDouble());
 		result.add(s.nextDouble());
 		result.add(s.nextDouble());
 		s.close();
@@ -38,10 +39,11 @@ public class DensityRenderer {
 	static public void renderLineND(List<Double> args, FileWriter outFile, double start, double increment,
 			double stop) {
 		try {
+//			outFile.append("\"" + args.get(0) + "\"\n");
 			double v = 0;
 			for (double sample = start; sample < stop; sample += increment) {
-				v = normalDistribution(args.get(0), args.get(1), sample);
-				outFile.append("" + v + " ");
+				v = normalDistribution(args.get(1), args.get(2), sample);
+				outFile.append(args.get(0) + " " + sample + " " + v + "\n");
 			}
 			outFile.append("\n");
 		} catch (IOException e) {
