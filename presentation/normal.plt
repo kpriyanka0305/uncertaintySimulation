@@ -1,1 +1,5 @@
-normal(x,a,s) = (1 / (s * sqrt(2*pi))) * exp(-((x-a)**2/(2 * s**2)))
+# generalized normal distribution
+normal(x,m,s) = pdf((x - m) / s) / s
+
+# standard normal distribution
+pdf(x) = exp(-x*x / 2) / sqrt(2*pi)
